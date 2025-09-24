@@ -29,5 +29,6 @@ pip install -r requirements.txt
 - Add time-based features (month, day-of-year) and lagged precipitation to capture temporal dependencies.
 - Try tree-based models and tune hyperparameters with cross-validation.
 
-## License
-Piyush Srivastava| https://github.com/piyushhhsriv
+## Author
+
+*Piyush Srivastava* | [GitHub](https://github.com/yourprofile)
