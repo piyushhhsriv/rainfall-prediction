@@ -1,6 +1,6 @@
 # Rainfall Prediction — Austin Weather
 
-This repository contains the Rainfall Prediction project (Module 13). The goal is to predict daily precipitation for Austin, Texas using historical weather data and to explore relationships between precipitation and weather features.
+This repository contains the Rainfall Prediction project. The goal is to predict daily precipitation for Austin, Texas using historical weather data and to explore relationships between precipitation and weather features.
 
 ## Repository contents
 - `austin_weather.csv` — Raw weather dataset (place in repo root if not present).
