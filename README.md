@@ -1,49 +1,33 @@
-```markdown
 # Rainfall Prediction — Austin Weather
 
-This repository contains a Jupyter Notebook that performs a Rainfall Prediction project using the Austin weather dataset (`austin_weather.csv`).
+This repository contains the Rainfall Prediction project (Module 13). The goal is to predict daily precipitation for Austin, Texas using historical weather data and to explore relationships between precipitation and weather features.
 
-## Contents
-- `rainfall_prediction.ipynb` — Jupyter Notebook with data cleaning, exploratory analysis, Linear Regression model, evaluation and visualizations.
-- `austin_weather.csv` — Dataset (place in same directory as the notebook).
-- `requirements.txt` — Python packages required to run the notebook.
+## Repository contents
+- `austin_weather.csv` — Raw weather dataset (place in repo root if not present).
+- `rainfall_prediction.ipynb` — Jupyter Notebook with data cleaning, EDA, baseline Linear Regression model, evaluation, and visualizations.
 
-## Project Summary
-- Objective: Predict daily precipitation (PrecipitationSumInches) using weather attributes such as average temperature, humidity, wind speed, visibility, dew point, and sea level pressure.
-- Approach:
-  - Load dataset and parse dates.
-  - Clean the data:
-    - Replace trace precipitation values `"T"` with `0.0` (treated as zero here).
-    - Convert `-` and blank entries to NaN.
-    - Convert numeric columns to numeric dtype and fill missing feature values with medians.
-    - Drop rows where the target (precipitation) is missing.
-  - Exploratory Data Analysis (time series, correlations, scatterplots).
-  - Train/test split and fit a baseline `LinearRegression` model.
-  - Evaluate using R², MSE, MAE and plot predicted vs actual precipitation.
-- Findings:
-  - Precipitation is skewed with many low/zero values; linear regression is a starting baseline.
-  - Consider alternative targets (rain/no-rain classification), transforms, or non-linear models for better performance.
-  - Additional feature engineering (lags/seasonality) and model tuning recommended.
+## Project overview
+1. Data loading and cleaning: handle special tokens such as `T` (trace precipitation), `-`, and missing values; convert appropriate columns to numeric types.
+2. Exploratory data analysis: visualize precipitation over time, correlation heatmap, scatter plots between precipitation and predictors (temperature, humidity, wind, etc.).
+3. Modeling: baseline Linear Regression (sklearn) to predict `PrecipitationSumInches`; evaluate using R², MSE, MAE.
+4. Next steps: try classification (rain/no-rain), feature engineering (lags, rolling means, seasonality), non-linear models (Random Forest, XGBoost), regularization, and cross-validation.
 
 ## How to run
-1. Clone or download this repository.
-2. Ensure `austin_weather.csv` is in the same folder as the notebook.
-3. (Optional) Create and activate a virtual environment.
-4. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-5. Launch Jupyter and open `rainfall_prediction.ipynb`:
-   ```
-   jupyter notebook rainfall_prediction.ipynb
-   ```
-
-## Requirements
-See `requirements.txt`.
-
-## Next steps / Improvements
-- Try classification (rain vs no-rain) using Logistic Regression or tree-based classifiers.
-- Use non-linear regressors (RandomForest, Gradient Boosting).
-- Add time series features (month, day-of-year, lags) and rolling means.
-- Consider different treatments for trace precipitation (`T`) — e.g., a small positive value vs. explicit trace marker.
+1. Ensure `austin_weather.csv` is in the repository root (or adjust the path in the notebook).
+2. Install dependencies (recommended in a virtual environment):
 ```
+pip install -r requirements.txt
+```
+3. Start Jupyter and open the notebook: `jupyter notebook rainfall_prediction.ipynb`.
+
+## Notes on preprocessing choices
+- Trace precipitation values `T` were treated as `0.0` in the baseline notebook. Alternative handling (e.g., small non-zero constant or separate flag) can be explored.
+- Missing numeric values are filled with medians before training the baseline model.
+
+## Suggested improvements
+- Transform the skewed precipitation target (log or use classification).
+- Add time-based features (month, day-of-year) and lagged precipitation to capture temporal dependencies.
+- Try tree-based models and tune hyperparameters with cross-validation.
+
+## License
+This repository is provided for educational purposes. Add a license file if you plan to reuse or distribute the code.
