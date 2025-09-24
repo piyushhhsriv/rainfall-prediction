@@ -4,7 +4,7 @@ This repository contains the Rainfall Prediction project (Module 13). The goal i
 
 ## Repository contents
 - `austin_weather.csv` — Raw weather dataset (place in repo root if not present).
-- `https://github.com/piyushhhsriv/rainfall-prediction/blob/main/rainfall_prediction_project.ipynb` — Jupyter Notebook with data cleaning, EDA, baseline Linear Regression model, evaluation, and visualizations.
+- `rainfall_prediction.ipynb` — Jupyter Notebook with data cleaning, EDA, baseline Linear Regression model, evaluation, and visualizations.
 
 ## Project overview
 1. Data loading and cleaning: handle special tokens such as `T` (trace precipitation), `-`, and missing values; convert appropriate columns to numeric types.
