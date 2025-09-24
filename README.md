@@ -30,4 +30,4 @@ pip install -r requirements.txt
 - Try tree-based models and tune hyperparameters with cross-validation.
 
 ## License
-This repository is provided for educational purposes. Add a license file if you plan to reuse or distribute the code.
+Piyush Srivastava| https://github.com/piyushhhsriv
